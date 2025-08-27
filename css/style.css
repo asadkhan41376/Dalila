@@ -586,6 +586,7 @@ label.error{
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  z-index: -2;
 }
 
 .fade-title-right{
@@ -2335,9 +2336,14 @@ img.mfp-img{
 
 .footer{
   text-align: center;
-  margin:7.1em 0 5.5em;
+  border-top: 1.2px solid #D3A83F;
   font-size: 12px;
   color: #aaa;
+  min-height: 50px;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
 }
 
 .footer .brand{
@@ -2956,15 +2962,15 @@ font-family: 'Oswald', sans-serif;
 
 /* Hover animation */
 .craft-motion-section .diamond-card:hover {
-  transform: rotateY(20deg) rotateX(20deg) scale(1.1);
+  /* transform: rotateY(20deg) rotateX(20deg) scale(1.1); */
   box-shadow: 0 0 20px rgba(255,255,255,0.5);
   
 }
-
+/* 
 .craft-motion-section .diamond-card:hover img {
   transform: rotate(-10deg) scale(1.1);
   
-}
+} */
 
 /* Fade-in on scroll */
 .craft-motion-section.show h2,
@@ -3002,5 +3008,128 @@ font-family: 'Oswald', sans-serif;
   .craft-motion-section .container {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+
+
+
+
+/* Sustainability Section */
+.sustainability-section {
+  background: linear-gradient(to bottom right, #fff, #f9f9f9);
+  padding: 100px 20px;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.sustainability-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s infinite ease-in-out;
+}
+
+
+.sustainability-subtitle {
+
+  max-width: 700px;
+  margin: 20px auto 60px;
+  line-height: 1.6;
+}
+
+/* Cards Layout */
+.sustainability-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  justify-content: center;
+}
+
+/* Card Style */
+.s-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 50px 25px;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.1);
+}
+
+.s-card::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(212,175,55,0.07);
+  transition: 0.5s;
+}
+
+.s-card:hover::after {
+  top: 0;
+}
+
+.s-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0px 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Icon Styling */
+.s-icon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37, #f0e68c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-inline: auto;
+  animation: iconFloat 3s infinite ease-in-out;
+}
+
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(15px); }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Responsive */
+@media(max-width: 576px) {
+  .s-card {
+    padding: 35px 20px;
+  }
+
+  /* .s-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .s-card p {
+    font-size: 0.9rem;
+  } */
+
+  .s-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
   }
 }

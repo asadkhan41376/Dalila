@@ -33,6 +33,7 @@
   object-fit: cover;
   transition: transform 0.4s ease;
   display: block;
+  cursor: pointer;          /* add cursor pointer for click */
 }
 
 .certificits-item:hover img {
@@ -58,6 +59,56 @@
 .certificate-pera {
   margin: 0;
   font-size: 14px;
+}
+
+/* -------- POPUP LIGHTBOX -------- */
+.popup {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  padding-top: 60px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.popup-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  animation: zoom 0.5s ease;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.7);}
+  to {transform: scale(1);}
+}
+
+#caption {
+  margin: 15px auto;
+  text-align: center;
+  color: #ccc;
+  font-size: 18px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #f00;
 }
 
 /* -------- RESPONSIVE BREAKPOINTS -------- */
@@ -103,5 +154,9 @@
 
   .certificate-pera {
     font-size: 12px;
+  }
+
+  #caption {
+    font-size: 14px;
   }
 }

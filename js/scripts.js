@@ -727,3 +727,8 @@ for(let i=0; i<20; i++){
   img.style.width = 20 + Math.random() * 30 + 'px';
   floatingDiv.appendChild(img);
 }
+
+
+
+
+// =====================certificates pop up  =====================
