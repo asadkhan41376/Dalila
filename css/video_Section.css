@@ -1,0 +1,144 @@
+.dalila-diamond-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 5%;
+  background: #fff;
+  color: #0a1a3d; /* Dark Blue */
+  overflow: hidden;
+}
+
+.dalila-diamond-section .container {
+  display: flex;
+  gap: 60px;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Mobile ke liye stack ho jaye */
+  width: 100%;
+}
+
+/* Left Video */
+.diamond-video {
+  flex: 1 1 500px; /* Responsive grow/shrink */
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(192, 155, 58, 0.4); /* Golden glow */
+  animation: floatVideo 6s ease-in-out infinite alternate;
+  max-width: 700px;
+  width: 100%;
+  height: 600px;
+  aspect-ratio: 16 / 9; /* Maintain video ratio */
+}
+
+.diamond-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Right Content */
+.diamond-content {
+  flex: 1 1 400px; /* Responsive */
+  animation: fadeSlideUp 1.2s ease forwards;
+}
+
+.diamond-content .sub-heading {
+  font-size: clamp(1.8rem, 2.5vw, 3rem); /* Responsive font */
+  font-weight: 600;
+  color: #c39b3b;
+  margin-bottom: 20px;
+}
+
+.diamond-content .body-text {
+  font-size: clamp(1rem, 1.5vw, 1.6rem);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #0a1a3d;
+  width: 100%;
+}
+
+/* Button */
+.luxury-btn {
+  font-family: 'montserratlight', sans-serif;
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #050C3A;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 20px rgba(195, 155, 59, 0.5);
+  text-transform: uppercase;
+}
+
+.luxury-btn:hover {
+  background-color: #c39b3b;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(195, 155, 59, 0.6);
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatVideo {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .dalila-diamond-section {
+    padding: 70px 5%;
+  }
+  .dalila-diamond-section .container {
+    gap: 40px;
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+  }
+  .diamond-content, 
+  .diamond-video {
+    max-width: 100%;
+    text-align: center;
+  }
+  .diamond-content .sub-heading,
+  .diamond-content .body-text {
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .dalila-diamond-section {
+    padding: 50px 5%;
+  }
+  .diamond-content .sub-heading {
+    font-size: 1.6rem;
+  }
+  .diamond-content .body-text {
+    font-size: 1rem;
+  }
+  .luxury-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
