@@ -3133,3 +3133,77 @@ font-family: 'Oswald', sans-serif;
     font-size: 1.6rem;
   }
 }
+
+
+
+.about-section {
+  padding: 80px 20px;
+  background: #fafafa;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Header */
+.about-header .divider {
+  width: 70px;
+  height: 3px;
+  background: #bfa14a;
+  margin: 15px auto;
+}
+.about-header .subtitle {
+  font-size: 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: #666;
+}
+
+/* Content */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.about-text {
+  flex: 1 1 50%;
+}
+
+/* Specializations */
+.specializations {
+  display: grid;
+  gap: 20px;
+}
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.3s ease;
+}
+.spec-item img {
+  width: 32px;
+  height: 32px;
+}
+.spec-item h5 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+.spec-item:hover {
+  transform: translateX(10px);
+  color: #bfa14a;
+}
+
+/* Image */
+.about-image {
+  flex: 1 1 40%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+.about-image img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+.about-image:hover img {
+  transform: scale(1.05);
+}
